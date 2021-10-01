@@ -12,7 +12,7 @@ function Modal({ showModal, setShowModal, post, updatePost }) {
 
     const updatedPost = { id, category, title, description, image };
 
-
+    //Handle Submit
     const handleSubmit = (e) => {
         e.preventDefault();
         updatePost(id, updatedPost);

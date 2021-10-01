@@ -15,6 +15,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    //Fetch Posts
     const fetchPosts = async () => {
       const response = await fetch("https://615194d84a5f22001701d2c7.mockapi.io/api/posts");
       const data = await response.json();
@@ -26,6 +27,7 @@ function App() {
 
 
   useEffect(() => {
+    //Filter Posts
     const filterPosts = () => {
       const filteredData = posts.filter(item =>
         item.title.includes(searchTerm)
@@ -37,6 +39,7 @@ function App() {
     filterPosts();
   }, [searchTerm, posts])
 
+  //Delete Post
   const deletePost = (id) => {
     const newPosts = posts.filter(post => post.id !== id);
     setPosts(newPosts);
@@ -45,6 +48,7 @@ function App() {
     })
   }
 
+  //Update Post
   const updatePost = (id, updatedPost) => {
     const newPosts = posts.map(post => post.id === id ? updatedPost : post);
     setPosts(newPosts);

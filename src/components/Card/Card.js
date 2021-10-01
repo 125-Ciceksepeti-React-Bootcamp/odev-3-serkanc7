@@ -7,6 +7,7 @@ function Card({ post, deletePost, updatePost }) {
 
     const [showModal, setShowModal] = useState(false);
 
+    //Open Modal
     const openModal = () => {
         setShowModal(prev => !prev);
     }

@@ -5,6 +5,7 @@ import profile from '@/assets/svg/profile.svg';
 
 function Header({ searchTerm, setSearchTerm }) {
 
+    //Hande Search
     const handleSearch = (e) => {
         setSearchTerm(e.target.value);
     }
